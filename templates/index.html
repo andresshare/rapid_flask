@@ -1,7 +1,11 @@
 {%extends 'base/base.html'%}
+{% block title%}{{title}}{% endblock title%}
 
 
 {% block content%} 
-<p>index</p>
-<p>{{name}}</p>
+    <p>index</p>
+    {% from "_macro.html" import render_field %}
+    <form>
+        {{render_field(form.username)}}
+    </form>
 {% endblock content%}
